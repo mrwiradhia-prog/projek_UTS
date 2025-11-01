@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobi Vape - Toko Vape Terpercaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <div class="d-flex align-items-center w-100">
+        <a class="navbar-brand fw-bold me-3" href="index.html">
+          <div class="logo">
+            <img src="asset/logo.png" alt="Logo Hobi Vape" class="logo-img">
+            <span>Hobi Vape</span>
+          </div>
+        </a>
+
+        <form class="d-flex me-auto" role="search" onsubmit="event.preventDefault(); searchProducts();">
+          <input id="searchInput" class="form-control form-control-sm me-2" type="search" placeholder="Cari produk..." aria-label="Search" style="width: 200px;">
+          <button class="btn btn-danger btn-sm" type="button" onclick="searchProducts()">Cari</button>
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Device</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="device.html?type=pod">Pod</a></li>
+                <li><a class="dropdown-item" href="device.html?type=mod">Mod</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Liquid</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="liquid.html?type=freebase">Freebase</a></li>
+                <li><a class="dropdown-item" href="liquid.html?type=saltnic">Salt Nic</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="aksesori.html">Aksesori</a></li>
+            <li class="nav-item"><a class="nav-link" href="tentangkami.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+
+            <li class="nav-item ms-2">
+              <button class="mode-toggle" onclick="toggleMode()">🌙 Mode</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Hobi Vape</h1>
+    <p>Temukan pengalaman vaping terbaik dengan produk berkualitas tinggi</p>
+  </header>
+
+  <!-- PRODUK TERBARU -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2 class="section-title mb-4">Produk Terbaru</h2>
+      <div id="productList" class="row g-4 justify-content-center"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hobi Vape | Nikmati sensasi vape dengan gaya</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Tampilkan produk Pod sebagai default di halaman utama
+    document.addEventListener('DOMContentLoaded', () => {
+      loadTheme(); // Load tema yang tersimpan
+      renderProducts('pod');
+    });
+  </script>
+</body>
+</html>

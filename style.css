@@ -1,0 +1,556 @@
+/* ========================================
+   HOBI VAPE - REFINED STYLESHEET
+   ======================================== */
+
+/* === ROOT VARIABLES (DARK MODE) === */
+:root {
+  --primary: #DC143C;
+  --primary-hover: #b01032;
+  --secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --bg-main: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(220, 20, 60, 0.3);
+  --shadow: rgba(220, 20, 60, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* === LIGHT MODE VARIABLES === */
+body.light-mode {
+  --primary: #DC143C;
+  --primary-hover: #b01032;
+  --secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --bg-main: #ffffff;
+  --bg-card: rgba(220, 20, 60, 0.04);
+  --bg-card-hover: rgba(220, 20, 60, 0.08);
+  --border-color: rgba(220, 20, 60, 0.2);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* === GLOBAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BODY & BASE === */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-main);
+  overflow-x: hidden;
+  transition: var(--transition);
+  line-height: 1.6;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: var(--secondary) !important;
+  border-bottom: 2px solid var(--primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px var(--shadow);
+  padding: 0.8rem 0;
+}
+
+/* === LOGO & BRAND === */
+.navbar-brand {
+  color: var(--primary) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: var(--transition);
+  filter: drop-shadow(0 2px 4px rgba(220, 20, 60, 0.3));
+}
+
+.navbar-brand:hover .logo-img {
+  transform: rotate(360deg);
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: var(--transition);
+  border-radius: 8px;
+  margin: 0 0.2rem;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+  background: var(--bg-card);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: var(--primary) !important;
+  background: var(--bg-card);
+  font-weight: 600;
+}
+
+/* === DROPDOWN MENU === */
+.dropdown-menu {
+  background: var(--secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 8px 24px var(--shadow);
+  margin-top: 0.5rem;
+}
+
+.dropdown-item {
+  color: var(--text-primary);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* === SEARCH BAR === */
+.form-control {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: 25px;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  background: var(--bg-card-hover) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 20, 60, 0.15) !important;
+  color: var(--text-primary) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.btn-danger {
+  background: var(--primary) !important;
+  border: none !important;
+  border-radius: 25px;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.btn-danger:hover {
+  background: var(--primary-hover) !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* === MODE TOGGLE BUTTON === */
+.mode-toggle {
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: 25px;
+  padding: 8px 18px;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: 0 3px 10px var(--shadow);
+  font-size: 0.9rem;
+}
+
+.mode-toggle:hover {
+  background: var(--primary-hover);
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* === NAVBAR TOGGLER === */
+.navbar-toggler {
+  border-color: var(--primary) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(220, 20, 60, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* === HEADER SECTION === */
+header {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), url('asset/toko.png') center/cover no-repeat;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid var(--primary);
+}
+
+header h1 {
+  font-size: 4rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+  animation: fadeInDown 0.8s ease;
+  letter-spacing: 2px;
+}
+
+header p {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  max-width: 600px;
+  line-height: 1.8;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 0.8s ease;
+}
+
+/* === SECTION STYLES === */
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* === PRODUCT CARDS === */
+.product-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 20px;
+  transition: var(--transition);
+  height: 100%;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px var(--shadow);
+  border-color: var(--primary);
+  background: var(--bg-card-hover);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: var(--transition);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+.product-card h5 {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* === FAQ ITEMS === */
+.faq-item {
+  background: var(--bg-card);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  text-align: left;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px var(--shadow);
+}
+
+.faq-item h5 {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* === BACK BUTTON === */
+.back-btn {
+  background: var(--primary);
+  border: none;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: var(--transition);
+  font-weight: 600;
+  box-shadow: 0 4px 15px var(--shadow);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px var(--shadow);
+  color: #ffffff;
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--secondary);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid var(--primary);
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* === ANIMATIONS === */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === LEAD TEXT === */
+.lead {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+  
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logo span {
+    font-size: 1.3rem;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 80px 15px;
+    min-height: 400px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .product-card {
+    margin-bottom: 20px;
+  }
+  
+  .nav-link {
+    padding: 0.7rem 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 60px 15px;
+    min-height: 350px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  header p {
+    font-size: 0.95rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .product-card img {
+    height: 180px;
+  }
+  
+  .mode-toggle {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+  
+  .form-control {
+    width: 150px !important;
+  }
+  
+  .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .logo span {
+    font-size: 1.1rem;
+  }
+}
+
+/* === SCROLLBAR STYLING === */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 6px;
+  border: 2px solid var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* === UTILITY CLASSES === */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* === SMOOTH TRANSITIONS === */
+a, button, .nav-link, .dropdown-item, .product-card, .mode-toggle {
+  transition: var(--transition);
+}
