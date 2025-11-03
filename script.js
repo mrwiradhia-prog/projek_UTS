@@ -82,7 +82,7 @@ function searchProducts() {
     mod: ['mod', 'drag', 'aegis', 'luxex', 'gen', 'power tinggi'],
     freebase: ['freebase', 'liquid freebase', 'buah', 'dessert', 'menthol'],
     saltnic: ['saltnic', 'salt nic', 'nikotin', 'manggo', 'strawberry', 'grape'],
-    aksesoris: ['case', 'coil', 'cotton', 'cartridge', 'battery', 'driptip', 'charger', 'lanyard']
+    aksesoris: ['aksesoris', 'coil', 'cotton', 'cartridge', 'battery', 'driptip', 'charger', 'lanyard']
   };
 
   let matchedCategory = null;
